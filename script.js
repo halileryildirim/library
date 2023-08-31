@@ -8,11 +8,25 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-    
+    let title = document.querySelector("#title").value;
+    let author = document.querySelector("#author").value;
+    let pages = document.querySelector("#pages").value;
+    let read = document.querySelector("#read").value;
+
+    const newBook = new Book(title,author,pages,read);
+    myLibrary.push(newBook);
 }
 
-const showDialog = document.getElementById("main-dialog");
-showDialog.addEventListener("click", function() {
-    let bookForm = document.getElementById("book-form");
-    bookForm.style.display = "block";
+const newBookBtn = document.querySelector("#new-book-btn");
+const mainDialog = document.querySelector("#form-dialog");
+const confirmBtn = document.querySelector("#confirmBtn");
+const library = document.querySelector("#library-showcase")
+
+newBookBtn.addEventListener("click", () => {
+    mainDialog.showModal();    
 })
+
+confirmBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+}) 
+

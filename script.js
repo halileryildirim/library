@@ -28,5 +28,8 @@ newBookBtn.addEventListener("click", () => {
 
 confirmBtn.addEventListener("click", (event) => {
     event.preventDefault();
+    addBookToLibrary();
+    console.log(myLibrary)
+
 }) 
 

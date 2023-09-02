@@ -47,33 +47,49 @@ function render() {
     for (const book in myLibrary) {
 
         const bookDiv = document.createElement("div");
+        bookDiv.id = 'books';
         const bookTitle = document.createElement("p");
         const bookTitletext = document.createTextNode(`Title: ${myLibrary[book].title}`);
         bookTitle.appendChild(bookTitletext);
-        bookDiv.appendChild(bookTitle);
         
         const bookAuthor = document.createElement("p");
         const bookAuthorText = document.createTextNode(`Author: ${myLibrary[book].author}`);
         bookAuthor.appendChild(bookAuthorText);
-        bookDiv.appendChild(bookAuthor);
-
-
+        
         const bookPages = document.createElement("p");
         const bookPagesText = document.createTextNode(`${myLibrary[book].pages} pages`);
         bookPages.appendChild(bookPagesText);
-        bookDiv.appendChild(bookPages);
-
-        const readButton = document.createElement('button');
+        
+        const readBtn = document.createElement('button');
         if(myLibrary[book].read) {
             let text = document.createTextNode("READ");
-            readButton.appendChild(text);
+            readBtn.appendChild(text);
         }
 
         else {
             let text = document.createTextNode("NOT READ");
-            readButton.appendChild(text);
+            readBtn.appendChild(text);
         }
-        bookDiv.appendChild(readButton);
+        
+
+        const removeBtn = document.createElement("button");
+        removeBtn.id = 'remove-button';
+        let text = document.createTextNode("REMOVE");
+        removeBtn.appendChild(text);
+        
+        removeBtn.addEventListener("click", () => {
+            bookDiv.remove();
+            myLibrary.splice(book, 1);
+        })
+
+
+        bookDiv.appendChild(bookTitle);
+        bookDiv.appendChild(bookAuthor);
+        bookDiv.appendChild(bookPages);
+        bookDiv.appendChild(readBtn);
+        bookDiv.appendChild(removeBtn);
+
         library.appendChild(bookDiv);
     }
 }
+

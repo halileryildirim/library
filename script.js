@@ -92,7 +92,8 @@ function render() {
         const removeBtn = document.createElement("button");
         let text = document.createTextNode("REMOVE");
         removeBtn.appendChild(text);
-        
+        removeBtn.id = "removeBtn";
+
         removeBtn.addEventListener("click", () => {
             bookDiv.remove();
             myLibrary.splice(book, 1);

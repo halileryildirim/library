@@ -4,9 +4,9 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-color: #2D3142;
+    background-color: #1D3557;
     font-size: 16px;
-    color: #FFFFFF;
+    color: #F1FAEE;
 }
 
 .header {
@@ -19,23 +19,23 @@
 
 a {
     text-decoration: none;
-    color: #FFFFFF;
+    color: #F1FAEE;
 }
 
 #new-book-btn {
-    background-color: #EF8354;
+    background-color: #E63946;
     width: 150px;
     height: 75px;
     font-size: 24px;
     border-radius: 3px;
-    color: #FFFFFF;
+    color: #F1FAEE;
     border: none;
     margin-left: 24px;
 }
 
 #form-dialog {
     background-color: #4F5D75;
-    color: #FFFFFF;
+    color: #F1FAEE;
     border: none;
     border-radius: 10px;
     width: 25%;
@@ -74,6 +74,43 @@ input{
 }
 
 #confirmBtn:hover, #cancelBtn:hover {
-    background-color: #EF8354;
+    background-color: #E63946;
+    color: white;
     border: none;
+}
+
+#books {
+    height: 300px;
+    width: 250px;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#books > button {
+    width: 33%;
+    height: 25px;
+    padding: 4px;
+    border:none;
+    outline: black 1px solid;
+    color: white;
+}
+
+#removeBtn {
+    background-color: #E63946;
+}
+
+#book-is-read {
+    background-color: green;
+}
+
+#book-is-not-read {
+    background-color: #E63946;
 }

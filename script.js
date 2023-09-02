@@ -20,15 +20,26 @@ function addBookToLibrary() {
 const newBookBtn = document.querySelector("#new-book-btn");
 const mainDialog = document.querySelector("#form-dialog");
 const confirmBtn = document.querySelector("#confirmBtn");
-const library = document.querySelector("#library-showcase")
+const library = document.querySelector("#library-showcase");
+let validity = document.getElementById("book-form").checkValidity();
+
 
 newBookBtn.addEventListener("click", () => {
     mainDialog.showModal();    
 })
 
 confirmBtn.addEventListener("click", (event) => {
-    event.preventDefault();
-    addBookToLibrary();
-    console.log(myLibrary)
+    let validity = document.getElementById("book-form").checkValidity();
+    if(validity) {
+        event.preventDefault();
+        addBookToLibrary();
+        console.log(myLibrary);
+    }
 }) 
 
+
+/* 
+        event.preventDefault();
+        addBookToLibrary();
+        console.log(myLibrary);
+*/

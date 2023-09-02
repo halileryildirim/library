@@ -96,7 +96,7 @@ function render() {
 
         removeBtn.addEventListener("click", () => {
             bookDiv.remove();
-            myLibrary.splice(book, 1);
+            myLibrary.splice(-1, 1);
         })
 
         bookDiv.appendChild(bookTitle);

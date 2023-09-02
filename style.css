@@ -7,6 +7,7 @@
     background-color: #1D3557;
     font-size: 16px;
     color: #F1FAEE;
+    overflow-x: hidden;
 }
 
 .header {
@@ -86,12 +87,13 @@ input{
     color: black;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     font-size: 16px;
     font-weight: bold;
     border-radius: 10px;
     padding: 10px;
+    text-align: center;
 }
 
 #books > button {
@@ -101,9 +103,10 @@ input{
     border:none;
     outline: black 1px solid;
     color: white;
+    margin: 12px;
 }
 
-#removeBtn {
+#removeBtn, #book-is-not-read  {
     background-color: #E63946;
 }
 
@@ -111,6 +114,9 @@ input{
     background-color: green;
 }
 
-#book-is-not-read {
-    background-color: #E63946;
+#library-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-left: 24px;
 }

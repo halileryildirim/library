@@ -49,11 +49,11 @@ function render() {
         const bookDiv = document.createElement("div");
         bookDiv.id = 'books';
         const bookTitle = document.createElement("p");
-        const bookTitletext = document.createTextNode(`Title: ${myLibrary[book].title}`);
+        const bookTitletext = document.createTextNode(`${myLibrary[book].title}`);
         bookTitle.appendChild(bookTitletext);
         
         const bookAuthor = document.createElement("p");
-        const bookAuthorText = document.createTextNode(`Author: ${myLibrary[book].author}`);
+        const bookAuthorText = document.createTextNode(`${myLibrary[book].author}`);
         bookAuthor.appendChild(bookAuthorText);
         
         const bookPages = document.createElement("p");

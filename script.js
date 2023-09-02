@@ -64,16 +64,32 @@ function render() {
         if(myLibrary[book].read) {
             let text = document.createTextNode("READ");
             readBtn.appendChild(text);
+            readBtn.id = "book-is-read";
         }
 
         else {
             let text = document.createTextNode("NOT READ");
             readBtn.appendChild(text);
+            readBtn.id = "book-is-not-read";
         }
         
+        readBtn.addEventListener("click", () => {
+            if(readBtn.textContent == "READ") {
+                let text = document.createTextNode("NOT READ");
+                readBtn.replaceChildren();
+                readBtn.appendChild(text);
+                readBtn.id = "book-is-not-read";
+            }
+    
+            else if(readBtn.textContent == "NOT READ"){
+                let text = document.createTextNode("READ");
+                readBtn.replaceChildren();
+                readBtn.appendChild(text);
+                readBtn.id = "book-is-read";
+            }
+        })
 
         const removeBtn = document.createElement("button");
-        removeBtn.id = 'remove-button';
         let text = document.createTextNode("REMOVE");
         removeBtn.appendChild(text);
         

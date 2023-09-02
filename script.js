@@ -98,7 +98,6 @@ function render() {
             myLibrary.splice(book, 1);
         })
 
-
         bookDiv.appendChild(bookTitle);
         bookDiv.appendChild(bookAuthor);
         bookDiv.appendChild(bookPages);

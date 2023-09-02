@@ -15,6 +15,7 @@ function addBookToLibrary() {
 
     const newBook = new Book(title,author,pages,read);
     myLibrary.push(newBook);
+    render();
 }
 
 const newBookBtn = document.querySelector("#new-book-btn");
@@ -28,15 +29,50 @@ newBookBtn.addEventListener("click", () => {
     mainDialog.showModal();    
 })
 
+cancelBtn.addEventListener("click", () => {
+    mainDialog.close();
+})
+
 confirmBtn.addEventListener("click", (event) => {
     let validity = document.getElementById("book-form").checkValidity();
     if(validity) {
         event.preventDefault();
         addBookToLibrary();
-        console.log(myLibrary);
     }
+    
 }) 
+ 
+function render() {
+    for (const book in myLibrary) {
 
-cancelBtn.addEventListener("click", () => {
-    mainDialog.close();
-})
+        const bookDiv = document.createElement("div");
+        const bookTitle = document.createElement("p");
+        const bookTitletext = document.createTextNode(`Title: ${myLibrary[book].title}`);
+        bookTitle.appendChild(bookTitletext);
+        bookDiv.appendChild(bookTitle);
+        
+        const bookAuthor = document.createElement("p");
+        const bookAuthorText = document.createTextNode(`Author: ${myLibrary[book].author}`);
+        bookAuthor.appendChild(bookAuthorText);
+        bookDiv.appendChild(bookAuthor);
+
+
+        const bookPages = document.createElement("p");
+        const bookPagesText = document.createTextNode(`${myLibrary[book].pages} pages`);
+        bookPages.appendChild(bookPagesText);
+        bookDiv.appendChild(bookPages);
+
+        const readButton = document.createElement('button');
+        if(myLibrary[book].read) {
+            let text = document.createTextNode("READ");
+            readButton.appendChild(text);
+        }
+
+        else {
+            let text = document.createTextNode("NOT READ");
+            readButton.appendChild(text);
+        }
+        bookDiv.appendChild(readButton);
+        library.appendChild(bookDiv);
+    }
+}

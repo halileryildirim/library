@@ -4,9 +4,9 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-color: #8ecae6;
+    background-color: #2D3142;
     font-size: 16px;
-    color: #023047;
+    color: #FFFFFF;
 }
 
 .header {
@@ -19,14 +19,61 @@
 
 a {
     text-decoration: none;
-    color: #023047;
+    color: #FFFFFF;
 }
 
 #new-book-btn {
-    background-color: #FFB703;
-    width: 120px;
-    height: 48px;
-    font-size: 16px;
+    background-color: #EF8354;
+    width: 150px;
+    height: 75px;
+    font-size: 24px;
     border-radius: 3px;
-    color: #023047;
+    color: #FFFFFF;
+    border: none;
+    margin-left: 24px;
+}
+
+#form-dialog {
+    background-color: #4F5D75;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    width: 25%;
+}
+
+#book-form {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 16px;
+}
+
+input{
+    width: 100%;
+    height: 24px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.read-checkbox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+#read {
+    margin: 0;
+    width: 18px;
+    height: 18px;
+}
+
+#confirmBtn, #cancelBtn {
+    height: 24px;
+    width: 100px;
+    border: none;
+}
+
+#confirmBtn:hover, #cancelBtn:hover {
+    background-color: #EF8354;
+    border: none;
 }

@@ -20,8 +20,8 @@ function addBookToLibrary() {
 const newBookBtn = document.querySelector("#new-book-btn");
 const mainDialog = document.querySelector("#form-dialog");
 const confirmBtn = document.querySelector("#confirmBtn");
+const cancelBtn = document.querySelector("#cancelBtn");
 const library = document.querySelector("#library-showcase");
-let validity = document.getElementById("book-form").checkValidity();
 
 
 newBookBtn.addEventListener("click", () => {
@@ -37,9 +37,6 @@ confirmBtn.addEventListener("click", (event) => {
     }
 }) 
 
-
-/* 
-        event.preventDefault();
-        addBookToLibrary();
-        console.log(myLibrary);
-*/
+cancelBtn.addEventListener("click", () => {
+    mainDialog.close();
+})

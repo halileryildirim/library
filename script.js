@@ -15,6 +15,7 @@ function addBookToLibrary() {
 
     const newBook = new Book(title,author,pages,read);
     myLibrary.push(newBook);
+    library.replaceChildren();
     render();
 }
 

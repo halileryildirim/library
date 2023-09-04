@@ -44,7 +44,7 @@ confirmBtn.addEventListener("click", (event) => {
 }) 
  
 function render() {
-    for (const book in myLibrary) {
+    for (let book in myLibrary) {
 
         const bookDiv = document.createElement("div");
         bookDiv.id = 'books';
@@ -102,10 +102,12 @@ function render() {
 
         library.appendChild(bookDiv);
 
+
         removeBtn.addEventListener("click", () => {
             bookDiv.remove();
-            myLibrary.splice(-1, 1);
+            //myLibrary.splice(book, 1);
+            delete myLibrary[book];
         })
+
     }
 }
-

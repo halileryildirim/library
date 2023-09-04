@@ -94,11 +94,6 @@ function render() {
         removeBtn.appendChild(text);
         removeBtn.id = "removeBtn";
 
-        removeBtn.addEventListener("click", () => {
-            bookDiv.remove();
-            myLibrary.splice(-1, 1);
-        })
-
         bookDiv.appendChild(bookTitle);
         bookDiv.appendChild(bookAuthor);
         bookDiv.appendChild(bookPages);
@@ -106,6 +101,11 @@ function render() {
         bookDiv.appendChild(removeBtn);
 
         library.appendChild(bookDiv);
+
+        removeBtn.addEventListener("click", () => {
+            bookDiv.remove();
+            myLibrary.splice(-1, 1);
+        })
     }
 }
 

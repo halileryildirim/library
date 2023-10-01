@@ -1,11 +1,14 @@
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title,
-    this.author = author,
-    this.pages = pages,
-    this.read = read
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title,
+        this.author = author,
+        this.pages = pages,
+        this.read = read
+    }
 }
+
 
 function addBookToLibrary() {
     let title = document.querySelector("#title").value;
@@ -13,7 +16,7 @@ function addBookToLibrary() {
     let pages = document.querySelector("#pages").value;
     let read = document.querySelector("#read").checked;
 
-    const newBook = new Book(title,author,pages,read);
+    let newBook = new Book(title,author,pages,read);
     myLibrary.push(newBook);
     library.replaceChildren();
     render();

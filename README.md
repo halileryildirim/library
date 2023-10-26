@@ -1,3 +1,3 @@
 # library
 
-Library application without local / cloud storage focusing on object and object constructors. 
+Library application built with HTML CSS and vanilla Javascript focusing on object and object constructors. 

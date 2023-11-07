@@ -108,7 +108,6 @@ function render() {
 
         removeBtn.addEventListener("click", () => {
             bookDiv.remove();
-            //myLibrary.splice(book, 1);
             delete myLibrary[book];
         })
 
